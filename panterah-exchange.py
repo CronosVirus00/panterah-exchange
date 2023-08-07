@@ -9,7 +9,7 @@ df = pd.read_csv('history.csv')
 df2 = pd.read_csv('historyape.csv')
 
 with st.container():
-    col1, col2 = st.columns([6,1])
+    col1, col2 = st.columns([6,2])
     with col1:
         value = round(df['€'][0],2)
         st.subheader(f':violet[Oggi un _caffé_ :coffee:  del Pantera vale:] {value}€')
@@ -23,7 +23,7 @@ with st.container():
 
 #####
 with st.container():
-    col1, col2 = st.columns([6,1])
+    col1, col2 = st.columns([6,2])
     with col1:
         value2 = round(df2['€'][0],2)
         st.subheader(f':orange[Oggi un _aperitivo_ :cocktail: del Pantera vale:] {value2}€')
