@@ -5,8 +5,8 @@ import numpy as np
 st.markdown("<h1 style='text-align: center; color: pink;'>Panterah Exchange</h1>", unsafe_allow_html=True)
 
 
-df = pd.read_csv('history.csv')
-df2 = pd.read_csv('historyape.csv')
+df = pd.read_csv('history-caffe.csv')
+df2 = pd.read_csv('history-ape.csv')
 
 with st.container():
     col1, col2 = st.columns([6,2])
@@ -34,3 +34,7 @@ with st.container():
         var2 = str(round(df2['Var'][0],2)) + "%"
         delta2 = round(df2['Var'][0]-df2['Var'][1],2)
         st.metric('Variazione', value=var2, delta=delta2)
+
+
+
+st.text(f'Ultimo Aggiornamento {df['Giorno'][len(df)]}')
