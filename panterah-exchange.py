@@ -39,3 +39,19 @@ with st.container():
 
 ultimo_aggiornamento = df['Giorno'][len(df)-1]
 st.text(f'Ultimo Aggiornamento {ultimo_aggiornamento}')
+
+with st.sidebar:
+    st.header('Convertitore')
+
+    euro_da_convertire = st.number_input("€ da convertire", step=1)
+
+    mil_check = st.checkbox('Milioni')
+    if mil_check:
+        euro_da_convertire *=1000000
+
+    to_caffe = round( euro_da_convertire/ df['€'][ultima_riga],2)
+    to_ape = round( euro_da_convertire/ df2['€'][ultima_riga],2)
+
+    
+    st.header(f':coffee:  {to_caffe}')
+    st.header(f':cocktail:  {to_ape}')
